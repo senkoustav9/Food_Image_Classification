@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-family: "Roboto", serif;
+}
+
+.Section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: calc(100vh - 64px);
+  background-color: aliceblue;
+}
+
+.ActionBox{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.UploadButton{
+  height: 50px;
+  width: 250px;
+  margin: 20px;
+}
+
+.UploadButton:hover{
+  cursor: pointer;
+}
+
+.ResultBox{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  padding: 10px;
+}
+
+.Cancel:hover{
+  cursor: pointer;
+}
