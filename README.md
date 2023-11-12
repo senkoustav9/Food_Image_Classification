@@ -1,3 +1,4 @@
+## Food Image Classification
 Welcome to the Food Classification App repository! This application utilizes Convolutional Neural Networks (CNN) and transfer learning to accurately classify various food items. Built with React for the frontend and Flask for the backend, this project offers a simple yet powerful solution for food identification.
 
 Upload an image of a food item through the app interface.
