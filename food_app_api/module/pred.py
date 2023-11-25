@@ -1,5 +1,6 @@
 import os
 import tensorflow as tf
+
 # Create a function to import an image and resize it to be able to be used with our model
 def load_and_prep_image(filename, img_shape=224, scale=True):
   """
@@ -126,12 +127,15 @@ class_to_num={
   "tuna_tartare": 99,
   "waffles": 100
 }
+
 class_names= list(class_to_num.keys())
 model = tf.keras.models.load_model("./FinalModel.hdf5")
+tf.keras.mixed_precision.set_global_policy('float32')
+model.summary()
 
 def pred_custom(img):
-    img = load_and_prep_image(img, scale=False) 
-    pred_prob = model.predict(tf.expand_dims(img, axis=0)) 
+    img = load_and_prep_image(img,scale=False) 
+    pred_prob = model.predict(tf.expand_dims(img, axis=0))
     pred_class = class_names[pred_prob.argmax()]
     return pred_class
 
