@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
-from module.pred import pred_custom, remove_img
+from module.pred import predict, remove_img
 import os
 
 app = Flask(__name__)
@@ -23,7 +23,7 @@ def serve():
         filename = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(filename)
         try:
-            prediction = pred_custom(filename)
+            prediction = predict(filename)
             remove_img(filename)
             return jsonify({'prediction': prediction})
         except:
